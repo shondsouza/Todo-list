@@ -25,16 +25,24 @@
         <h2>Shon's Todo-list</h2>
       </div>
       <div class="input-feild">
-        <input type="text" placeholder="Add your task" />
-        <button type="submit">Add</button>
+        <input type="text" placeholder="Add your task" id="input" />
+        <button type="submit" onclick="addEvent()">Add</button>
       </div>
       <div class="list">
         <div class="task">
           <img src="./images/unchecked.png" alt="" />
-          <span>Go for a Run 1hr</span>
+          <span class="lists">Go for a Run 1hr</span>
           <div class="icons">
-            <i class="fa-solid fa-xmark end-item" title="Remove"></i>
-            <i class="fa-solid fa-pen-to-square end-item" title="Edit"></i>
+            <i
+              class="fa-solid fa-xmark end-item"
+              title="Remove"
+              id="remove"
+            ></i>
+            <i
+              class="fa-solid fa-pen-to-square end-item"
+              title="Edit"
+              id="edit"
+            ></i>
           </div>
         </div>
       </div>
