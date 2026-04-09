@@ -3,19 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Todo</title>
+    <title>Todo-App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
-    <script src="script.js"></script>
   </head>
   <body>
-    <div class="container">
-      <div class="todo-app">
-        <h2>To-Do List<img src="./images/icon.png" alt="logo" /></h2>
-        <div class="input-text">
-          <label for="text" id="text-feild"></label>
-          <input type="text" id="text-feild" placeholder="Add your Text" />
-          <button type="submit">Add</button>
-        </div>
+    <div class="card">
+      <div class="title">
+        <img src="./images/icon.png" alt="todo-icon" />
+        <h2>Shon's Todo-list</h2>
+      </div>
+      <div class="input-feild">
+        <input type="text" placeholder="Add your task" />
+        <button type="submit">Add</button>
       </div>
     </div>
   </body>
