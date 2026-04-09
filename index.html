@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Todo-App</title>
+    <link rel="icon" href="./images/icon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -27,21 +28,15 @@
         <input type="text" placeholder="Add your task" />
         <button type="submit">Add</button>
       </div>
-
-      <div class="task">
-        <img src="./images/unchecked.png" alt="" />
-        <span>Drink</span>
-        <i class="fa-solid fa-xmark"></i>
-      </div>
-      <div class="task">
-        <img src="./images/unchecked.png" alt="" />
-        <span>Go for a Run 1hr</span>
-        <i class="fa-solid fa-xmark"></i>
-      </div>
-      <div class="task">
-        <img src="./images/unchecked.png" alt="" />
-        <span>Go 1 hr gym</span>
-        <i class="fa-solid fa-xmark"></i>
+      <div class="list">
+        <div class="task">
+          <img src="./images/unchecked.png" alt="" />
+          <span>Go for a Run 1hr</span>
+          <div class="icons">
+            <i class="fa-solid fa-xmark end-item" title="Remove"></i>
+            <i class="fa-solid fa-pen-to-square end-item" title="Edit"></i>
+          </div>
+        </div>
       </div>
     </div>
   </body>

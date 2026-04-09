@@ -65,7 +65,7 @@ body {
 }
 
 .input-feild > button:active {
-  background: #1da1f2;
+  background: #ff8c00;
   color: white;
 }
 
@@ -74,12 +74,13 @@ body {
   /* justify-content: space-between; */
   align-items: center;
   padding: 0px;
-  margin: 20px;
+  margin: 50px 20px 20px 20px;
   gap: 30px;
+  position: relative;
 }
 
-.task :last-child {
-  margin-left: auto;
+.task > .end-item {
+  margin-left: 10px;
 }
 
 .task span:active {
@@ -88,11 +89,23 @@ body {
   color: #a9a9a9;
 }
 
+.task .icons {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  gap: 15px;
+}
+
 .task > img {
   width: 25px;
   height: auto;
 }
 
-.task > i {
+.icons > i {
   color: #a9a9a9;
+}
+
+.icons > i:active {
+  color: #d3d3d3;
 }
