@@ -1,11 +1,8 @@
 const addToBtn = document.getElementById("addToBtn");
 const inputBtn = document.getElementById("input");
-const iconBtn = document.getElementById("icons");
-const removeBtn = document.getElementById("remove");
-const editBtn = document.getElementById("edit");
+const listContainer = document.getElementById("taskList");
 
 addToBtn.addEventListener("click", extractText);
-removeBtn.addEventListener("click", deleteTask);
 
 let tasks = [];
 
@@ -18,7 +15,19 @@ function extractText() {
   let task = { id: Date.now(), task: extractedText, isCompleted: false };
   tasks.push(task);
   console.log(tasks);
-
+  displayTasks();
   inputBtn.value = " ";
 }
-function deleteTask() {}
+// function deleteTask() {}
+
+function displayTasks() {
+  listContainer.innerHTML = "";
+  tasks.forEach((task) => {
+    const div = document.createElement("div");
+    listContainer.appendChild(div);
+    const CheckboxIcon = document.createElement("img");
+    CheckboxIcon.src = "./images/checked.png";
+    div.appendChild(CheckboxIcon);
+    div.textContent = task.task;
+  });
+}
