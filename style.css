@@ -83,7 +83,7 @@ body {
   margin-left: 10px;
 }
 
-.task span:active {
+.task li:active {
   text-decoration: line-through;
   text-decoration-color: #a9a9a9;
   color: #a9a9a9;
@@ -108,4 +108,8 @@ body {
 
 .icons > i:active {
   color: #d3d3d3;
+}
+
+.task > ul > li {
+  list-style-type: none;
 }

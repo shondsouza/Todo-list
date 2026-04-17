@@ -12,7 +12,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
-    <script src="script.js"></script>
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
@@ -21,17 +21,21 @@
   <body>
     <div class="card">
       <div class="title">
-        <img src="./images/icon.png" alt="todo-icon" />
+        <img src="./images/icon.png" alt="todo-icon" id="icon" />
         <h2>Shon's Todo-list</h2>
       </div>
+
       <div class="input-feild">
         <input type="text" placeholder="Add your task" id="input" />
-        <button type="submit" onclick="addEvent()">Add</button>
+        <button type="submit" id="addToBtn">Add</button>
       </div>
+
       <div class="list">
         <div class="task">
           <img src="./images/unchecked.png" alt="" />
-          <span class="lists">Go for a Run 1hr</span>
+          <ul>
+            <li id="lists">Hello</li>
+          </ul>
           <div class="icons">
             <i
               class="fa-solid fa-xmark end-item"
@@ -47,5 +51,7 @@
         </div>
       </div>
     </div>
+
+    <script src="script.js"></script>
   </body>
 </html>

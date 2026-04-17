@@ -1,16 +1,24 @@
-const input = document.getElementById("input");
-const lists = document.getElementById("lists");
-const edit = document.getElementById("edit");
-const remove = document.getElementById("remove");
+const addToBtn = document.getElementById("addToBtn");
+const inputBtn = document.getElementById("input");
+const iconBtn = document.getElementById("icons");
+const removeBtn = document.getElementById("remove");
+const editBtn = document.getElementById("edit");
 
-function addEvent() {
-  const text = document.getElementById("input").value;
-  let myTasks = [{}];
+addToBtn.addEventListener("click", extractText);
+removeBtn.addEventListener("click", deleteTask);
 
-  console.log(text);
-  myTasks.push({ Tasks: input.value });
-  // console.log(myTasks);
-  // input.value = "";
+let tasks = [];
+
+function extractText() {
+  let extractedText = document.getElementById("input").value.trim("");
+  if (extractedText.length === 0) {
+    alert("Task cannot be empty");
+    return;
+  }
+  let task = { id: Date.now(), task: extractedText, isCompleted: false };
+  tasks.push(task);
+  console.log(tasks);
+
+  inputBtn.value = " ";
 }
-
-// console.log(myTasks);
+function deleteTask() {}
