@@ -114,7 +114,15 @@ body {
   list-style-type: none;
 }
 
-.completed{
+.completed {
   text-decoration: line-through;
   color: #a9a9a9;
+}
+
+.check-box {
+  width: 25px;
+}
+
+.uncheck-box {
+  width: 25px;
 }

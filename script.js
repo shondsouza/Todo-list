@@ -5,6 +5,12 @@ const listContainer = document.getElementById("taskList");
 addToBtn.addEventListener("click", extractText);
 
 let tasks = [];
+const saved = localStorage.getItem("tasks");
+
+if (saved) {
+  tasks = JSON.parse(saved);
+  displayTasks();
+}
 
 function extractText() {
   let extractedText = document.getElementById("input").value.trim("");
@@ -14,6 +20,7 @@ function extractText() {
   }
   let task = { id: Date.now(), task: extractedText, isCompleted: false };
   tasks.push(task);
+  saveTasks();
   // console.log(tasks);
   displayTasks();
   inputBtn.value = " ";
@@ -30,11 +37,10 @@ function displayTasks() {
     div.classList.add("task-container");
     icon.classList.add("remove-button");
     span.classList.add("task-text");
-
     if (task.isCompleted === true) {
       const checkboxIcon = document.createElement("img");
       checkboxIcon.src = "./images/checked.png";
-      checkboxIcon.style.width = "25px";
+      checkboxIcon.classList.add("check-box");
       checkboxIcon.addEventListener("click", function () {
         toggleFn(task);
       });
@@ -42,13 +48,12 @@ function displayTasks() {
     } else {
       const uncheckBoxIcon = document.createElement("img");
       uncheckBoxIcon.src = "./images/unchecked.png";
-      uncheckBoxIcon.style.width = "25px";
+      uncheckBoxIcon.classList.add("uncheck-box");
       uncheckBoxIcon.addEventListener("click", function () {
         toggleFn(task);
       });
       div.appendChild(uncheckBoxIcon);
     }
-
     icon.classList.add("fa-solid", "fa-xmark");
     icon.addEventListener("click", function () {
       deleteTask(task);
@@ -70,6 +75,7 @@ function displayTasks() {
 function toggleFn(task) {
   task.isCompleted = !task.isCompleted;
   displayTasks();
+  saveTasks();
 }
 
 function deleteTask(task) {
@@ -79,6 +85,7 @@ function deleteTask(task) {
   }
 
   displayTasks();
+  saveTasks();
 }
 
 inputBtn.addEventListener("keypress", function (event) {
@@ -87,3 +94,8 @@ inputBtn.addEventListener("keypress", function (event) {
     addToBtn.click();
   }
 });
+
+function saveTasks() {
+  const data = JSON.stringify(tasks);
+  localStorage.setItem("tasks", data);
+}
